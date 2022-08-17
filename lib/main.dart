@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:time_it/clock_view.dart';
+import 'package:time_it/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,22 +9,9 @@ void main() {
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "clock",
-      theme: ThemeData(primarySwatch: Colors.teal),
-      home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                Color(0XFF53E0E1),
-                Color(0XFFF699BA),
-                Color(0XFFFCD970)
-              ])),
-        ),
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        title: "clock",
+        theme: ThemeData(primarySwatch: Colors.teal),
+        home: HomePage());
   }
 }
