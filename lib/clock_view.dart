@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
@@ -18,10 +20,10 @@ class ClockViewState extends State<ClockView> {
       child: Container(
         height: h / 3,
         width: w / 1.5,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Colors.amber,
-        ),
+        // decoration: BoxDecoration(
+        //   borderRadius: BorderRadius.circular(20),
+        //   color: Colors.amber,
+        // ),
         child: CustomPaint(painter: ClockPainter()),
       ),
     );
@@ -31,7 +33,12 @@ class ClockViewState extends State<ClockView> {
 class ClockPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    // TODO: implement paint
+    var centerX = size.width / 2;
+    var centerY = size.height / 2;
+    var center = Offset(centerX, centerY);
+    var radius = min(centerX, centerY);
+    var fillBrush = Paint()..color = Colors.amber;
+    canvas.drawCircle(center, radius, fillBrush);
   }
 
   @override
